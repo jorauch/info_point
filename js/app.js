@@ -2,27 +2,26 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('iph-info_point', [
+var ipointApp = angular.module('ipointApp', [
   'ngRoute',
-  'phonecatAnimations',
-
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
+  'contentAnimations',
+  'contentControllers',
+  'contentFilters',
+  'contentServices'
 ]);
 
-phonecatApp.config(['$routeProvider',
+ipointApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/', {
-        templateUrl: 'partials/content-list.html',
-        controller: 'ContentListCtrl'
-      }).
-      when('/content/:phoneId', {
-        templateUrl: 'partials/content-detail.html',
-        controller: 'ContentDetailCtrl'
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
+        when('/items', {
+          templateUrl: 'partials/content-list.html',
+          controller: 'ContentListCtrl'
+        }).
+        when('/content/:itemId', {
+          templateUrl: 'partials/content-detail.html',
+          controller: 'ContentDetailCtrl'
+        }).
+        otherwise({
+          redirectTo: '/items'
+        });
   }]);

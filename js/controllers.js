@@ -2,18 +2,19 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var contentControllers = angular.module('contentControllers', []);
 
-phonecatControllers.controller('ContentListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
+contentControllers.controller('ContentListCtrl', ['$scope', 'Item',
+  function($scope, Item) {
+    console.log("hello");
+    $scope.Item = Item.query();
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('ContentDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+contentControllers.controller('ContentDetailCtrl', ['$scope', '$routeParams', 'Item',
+  function($scope, $routeParams, Item) {
+    $scope.item = Item.get({itemId: $routeParams.itemId}, function(item) {
+      $scope.mainImageUrl = item.images[0];
     });
 
     $scope.setImage = function(imageUrl) {
