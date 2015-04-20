@@ -17,7 +17,7 @@ ipointApp.config(['$routeProvider',
           templateUrl: 'partials/content-list.html',
           controller: 'ContentListCtrl'
         }).
-        when('/content/:itemId', {
+        when('/items/:itemId', {
           templateUrl: 'partials/content-detail.html',
           controller: 'ContentDetailCtrl'
         }).

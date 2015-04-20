@@ -6,7 +6,7 @@ var contentServices = angular.module('contentServices', ['ngResource']);
 
 contentServices.factory('Item', ['$resource',
   function($resource){
-    return $resource('items/:contentId.json', {}, {
+    return $resource('items/:itemId.json', {}, {
       query: {method:'GET', params:{itemId:'items'}, isArray:true}
     });
   }]);
