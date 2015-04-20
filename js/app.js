@@ -10,10 +10,10 @@ var ipointApp = angular.module('ipointApp', [
   'contentServices'
 ]);
 
-ipointApp.config(['$routeProvider',
-  function($routeProvider) {
+ipointApp.config(['$routeProvider','$locationProvider',
+  function($routeProvider, $locationProvider) {
     $routeProvider.
-        when('/items', {
+        when('/', {
           templateUrl: 'partials/content-list.html',
           controller: 'ContentListCtrl'
         }).
@@ -22,6 +22,10 @@ ipointApp.config(['$routeProvider',
           controller: 'ContentDetailCtrl'
         }).
         otherwise({
-          redirectTo: '/items'
+          redirectTo: '/'
         });
+
+      // use the HTML5 History API
+      $locationProvider.html5Mode(true);
+
   }]);
