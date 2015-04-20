@@ -7,7 +7,6 @@ var contentControllers = angular.module('contentControllers', []);
 contentControllers.controller('ContentListCtrl', ['$scope', 'Item',
   function($scope, Item) {
     $scope.items = Item.query();
-    console.log($scope.Item);
     $scope.orderProp = 'age';
   }]);
 
