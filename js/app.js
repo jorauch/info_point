@@ -14,15 +14,15 @@ var phonecatApp = angular.module('iph-info_point', [
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+      when('/', {
+        templateUrl: 'partials/content-list.html',
+        controller: 'ContentListCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/content/:phoneId', {
+        templateUrl: 'partials/content-detail.html',
+        controller: 'ContentDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/'
       });
   }]);
